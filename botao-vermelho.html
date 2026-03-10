@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não Aperte o Botão</title>
+    <style>
+        body {background: black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: aliceblue; align-items: center; justify-content: center; display: flex; height: 100vh; flex-direction: column;}
+        .red-button {background: red; color: white; width: 300px; height: 300px; border-radius: 600px; box-shadow: 0 10px 500px red; border: 12px solid crimson; font-size: larger; cursor: pointer; font-size: 25px;}
+        h1 {font-size: 50px;}
+        #boom {height: 100vh; width: 100vw; position: fixed; display: none;}
+    </style>
+</head>
+<body>
+    <h1>Não aperte o botão</h1>
+    <div>
+        <button class="red-button" onclick="explosao()">Botão Vermelho</button>
+    </div>
+    <img src="https://media.tenor.com/nANqORN7qhQAAAAM/explosion-explode.gif" alt="" id="boom">
+    <h1>Não aperte o botão</h1>
+
+    <script>
+        function explosao () {
+            const gif = document.getElementById('boom')
+            gif.style.display = 'block'
+        }
+    </script>
+</body>
+</html>
