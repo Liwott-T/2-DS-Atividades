@@ -1,9 +1,11 @@
 <head>
-
+    <link rel="stylesheet" href="stylePA.css">
 </head>
 
-<body>
+<body onclick="butao()">
     
+    <h1>Cliques: <span id="cliquesT"></span></h1>
+
     <h1>Títusosis</h1>
     <h6>very smol</h6>
 
@@ -17,7 +19,7 @@
     <h1>Pingumim</h1>
     <img src="https://i.pinimg.com/736x/46/77/2e/46772e5f25f129245b060ef1287cc5c1.jpg" alt="">
     nada
-    <button>Butao <h1>Butao</h1> <h5>que nao faz nada</h5></button>
+    <button onclick="butao()">Butao <h1>Butao</h1> <h5>que nao faz nada</h5></button>
     <q>texto entre caspas</q>
     <embed src="https://app.milanote.com/" type="">
     <u>chineses? sublinhados</u>
@@ -40,3 +42,12 @@
         console.log("Olá little mundo");
     </script>
 </body>
+
+<script>
+    var cliques = 1
+
+    function butao() {
+        cliques = cliques + 1
+        document.getElementById("cliquesT").innerText = cliques
+    }
+</script>
