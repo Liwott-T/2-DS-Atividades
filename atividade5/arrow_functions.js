@@ -19,7 +19,7 @@ const todosPassaram = mediafinal.every(m => m > 6);
 console.log(todosPassaram);
 
 // .toUpperCase() .toLowerCase(): coloca todas as letras em maiúsculas/minúsculas
-const nomes = ["Liwott", "mcBerson", "zax", "stRIKer", "yorI", "MIKASA"];
+const nomes = ["Liwott", "mcBerson", "zax", "stRIKer", "yorI", "MITAKA"];
 const maiusculas = nomes.map(n => n.toUpperCase());
 console.log(maiusculas);
 nomes.forEach(n => console.log(n.toLowerCase()));
