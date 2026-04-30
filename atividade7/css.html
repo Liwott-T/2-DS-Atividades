@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>WebsWebsWebsWebsWebsWebs</title>
+    </head>
+    <body>
+        <h1>Minha Página Webs <span id="cliquesT"></span></h1>
+        <p>paragrafosis</p>
+        <p>
+            Lista de compras:
+            <ul>
+                <li class="comida">Batata</li>
+                <li class="comida">Alho</li>
+            </ul>
+            <ul>
+                <li class="jogo">Bad End Theater</li> 
+                <li class="jogo">Onikura</li>
+            </ul>
+        </p>
+        <div id="butoes">
+        <button onclick="butao()">Comprar</button>
+        <button onclick="butao()">Adicionar Item</button>
+        </div>
+        <img src="butcher_vanity.jpg" alt="">
+    </body>
+</html>
+
+<style>
+    body {
+        background-color: #FFF000;
+        color: #FF3938;
+    }
+    p {
+        background-color: #FFFF;
+        display: table;
+    }
+    img {
+        align-self: center;
+    }
+
+    .comida {
+        color: #bce5ff;
+    }
+
+    .jogo {
+        color: #bc3838;
+    }
+
+    .comida, .jogo {
+        background-color: black;
+        padding: 0%;
+    }
+
+    #butoes {
+        background-color: #bce5ff;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #butoes button {
+        border-radius: 20px;
+    }
+</style>
+
+<script>
+    var cliques = 1
+
+    function butao() {
+        cliques = cliques + 1
+        document.getElementById("cliquesT").innerText = cliques
+    }
+</script>
