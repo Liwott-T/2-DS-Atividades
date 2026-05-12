@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo a ter o DOM</title>
+</head>
+<body>
+    <h1>Modelo de Objeto do Documento</h1>
+    <a id="nav" href="index.html">Início</a>
+    <img id="lampada" src="luz-apagada.png">
+    <button onclick="ligar()">Ligar</button>
+    <button onclick="desligar()">Desligar</button>
+</body>
+</html>
+
+<script>
+    function ligar(){
+        document.getElementById('lampada').src = 'luz-ligada.png'
+    };
+    function desligar(){
+    document.getElementById('lampada').src = 'luz-desligada.png'
+    }
+</script>
