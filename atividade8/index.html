@@ -17,8 +17,10 @@
 <script>
     function ligar(){
         document.getElementById('lampada').src = 'luz-ligada.png'
+        document.body.style.backgroundColor = "yellow"
     };
     function desligar(){
-    document.getElementById('lampada').src = 'luz-desligada.png'
+        document.getElementById('lampada').src = 'luz-desligada.png'
+        document.body.style.backgroundColor = "black"
     }
 </script>
