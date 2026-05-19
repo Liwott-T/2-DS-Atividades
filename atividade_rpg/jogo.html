@@ -17,19 +17,19 @@
                     <div class="col">
                         <ul class="list-group float-end text-center" style="width: 225px;">
                             <!-- Nome Herói -->
-                            <li class="list-group-item"><span id="nome_heroi"></span></li>
+                            <li class="list-group-item"><strong id="nome_heroi"></strong></li>
                             <!-- Título Herói -->
                             <li class="list-group-item"><span id="titulo_heroi"></span></li>
-                            <li class="list-group-item">❤️ <progress value="100" max="100" style="accent-color: red;"></progress></li>
-                            <li class="list-group-item">🌀 <progress value="100" max="100"></progress></li>
-                            <li class="list-group-item">⚡ <progress value="0" max="100" style="accent-color: yellow"></progress></li>
+                            <li class="list-group-item">❤️ <progress id="hp-hero" value="100" max="100" style="accent-color: red;"></progress></li>
+                            <li class="list-group-item">🌀 <progress id="mana-hero" value="100" max="100"></progress></li>
+                            <li class="list-group-item">⚡ <progress id="energia-hero" value="0" max="100" style="accent-color: yellow"></progress></li>
                         </ul> 
                     </div>
                     <!-- Status Chefe -->
                     <div class="col">
                         <ul class="list-group float-start text-center" style="width: 225px;">
                             <!-- Nome Herói -->
-                            <li class="list-group-item"><span id="nome_chefe"></span></li>
+                            <li class="list-group-item"><strong id="nome_chefe"></strong></li>
                             <!-- Título Herói -->
                             <li class="list-group-item"><span id="titulo_chefe"></span></li>
                             <li class="list-group-item">❤️ <progress value="100" max="100" style="accent-color: red;"></progress></li>
@@ -41,6 +41,7 @@
                     <!-- IMG Hero -->
                     <div class="col text-end">
                         <img id="imagem_heroi" width="250px" height="200px" style="margin-top: 300px;">
+                        <div id="controles"></div>
                     </div>
                     <!-- IMG Boss -->
                     <div class="col text-start">
@@ -53,67 +54,5 @@
         </div> <!-- Fim Card -->
     </div> <!-- Fim Container -->
 </body>
+<script src="javascript.js"></script>
 </html>
-
-<script>
-    
-    var nome_heroi = "vazio"
-    var titulo_heroi = "vazio"
-    var nome_chefe = "vazio"
-
-    var id_heroi = 0
-
-    do {
-        id_heroi = parseFloat(prompt(`Escolha um herói (Insira apenas o número)
-        1. Mayreel
-        2. Hutao
-        3. Heroi3`))
-    } while (id_heroi !== 1 && id_heroi !== 2 && id_heroi !== 3 && id_heroi !== 18092022)
-
-    switch (id_heroi) {
-        case 1:
-            nome_heroi = "Mayreel"
-            titulo_heroi = "A Besta Divina da Colheita"
-            imagem_heroi = "assets/mayreel_idle.gif"
-            nome_chefe = "Besta das Sombras"
-            titulo_chefe = ""
-            imagem_chefe = "assets/shadow_beast.gif"
-            imagem_fundo = "assets/gt_background.png"
-            break
-        case 2:
-            nome_heroi = "Hutao"
-            titulo_heroi = "Titulo 2"
-            imagem_heroi = "assets/hutao_idle.gif"
-            nome_chefe = "Dvalin"
-            titulo_chefe = "Titulo 2"
-            imagem_chefe = "assets/dvalin.gif"
-            imagem_fundo = "assets/forest.jpeg"
-            break
-        case 3:
-            nome_heroi = "Heroi 3"
-            titulo_heroi = "Titulo 3"
-            imagem_heroi = 3
-            nome_chefe = ""
-            titulo_chefe = "Titulo 3"
-            imagem_chefe = 3
-            imagem_fundo = 3
-            break
-        case 18092022:
-            nome_heroi = "Heroi 3"
-            titulo_heroi = "Titulo 3"
-            imagem_heroi = "https://cdn.thespike.gg/Franchise%2520Teams%2FFNS_1691492572101.png"
-            nome_chefe = "Aspas???"
-            titulo_chefe = "Final Boss"
-            imagem_chefe = "assets/aspas.webp"
-            imagem_fundo = 3
-            break
-    }
-
-    document.getElementById("nome_heroi").innerText = nome_heroi;
-    document.getElementById("titulo_heroi").innerText = titulo_heroi;
-    document.getElementById("imagem_heroi").src = imagem_heroi;
-    document.getElementById("nome_chefe").innerText = nome_chefe;
-    document.getElementById("titulo_chefe").innerText = titulo_chefe;
-    document.getElementById("imagem_chefe").src = imagem_chefe;
-    document.getElementById("background").style.backgroundImage = `url('${imagem_fundo}')`;  
-</script>
