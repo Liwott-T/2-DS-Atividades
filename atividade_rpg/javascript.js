@@ -43,8 +43,8 @@ switch (id_heroi) {
         boss = new Personagem ("Dvalin", "Dragão do Leste", 10, 0, 50, "assets/dvalin.gif", "assets/forest.jpeg")
         break
     case 18092022:
-        heroi = new Personagem ("FNS", "THE MASTERMIND", 10, 30, 0, "assets/fns.png", "assets/arena-do-aspas.webp")
-        boss = new Personagem ("Aspas???", "Final Boss", 10, 0, 50, "assets/aspas.png", "assets/arena-do-aspas.webp")
+        heroi = new Personagem ("FNS", "THE MASTERMIND", 500, 1000, 0, "assets/fns.png", "assets/arena-do-aspas.webp")
+        boss = new Personagem ("Aspas???", "Final Boss", 1000, 2024, 50, "assets/aspas.png", "assets/arena-do-aspas.webp")
         break
 };
 console.log(document.getElementById("nome_heroi"));
@@ -56,8 +56,15 @@ document.getElementById("nome_chefe").innerText = boss.nome;
 document.getElementById("titulo_chefe").innerText = boss.titulo;
 document.getElementById("imagem_chefe").src = boss.imagem;
 
+let containerBtn = document.getElementById("controles")
 let listaHabilidades = [
-    new Habilidade (1, "ataque", 4, 0, 0),
-    new Habilidade (2, "skill", 8, 10, 0),
-    new Habilidade (3, "supreme", 15, 0, 100),
-]
+    new Habilidade (1, "🍃 Ataque", 4, 0, 0),
+    new Habilidade (2, "🤓 Skill", 8, 10, 0),
+    new Habilidade (3, "🦙 Supreme", 15, 0, 100),
+];
+
+listaHabilidades.forEach(hab => {
+    let btn = document.createElement("button");
+    btn.innerText = hab.nome;
+    containerBtn.appendChild(btn);
+});
