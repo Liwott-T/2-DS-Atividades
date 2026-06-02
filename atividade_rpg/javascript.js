@@ -26,7 +26,7 @@ class Personagem {
     ataque_boss(alvo){
         if (this.energia >= 100){
             alvo.hp -= 15
-            this.energia += 50
+            this.energia = 0
         }
         else {
             this.energia += 50
@@ -96,7 +96,7 @@ console.log(document.getElementById("nome_heroi"));
 document.getElementById("nome_heroi").textContent = heroi.nome;
 document.getElementById("titulo_heroi").innerText = heroi.titulo;
 document.getElementById("imagem_heroi").src = heroi.imagem;
-document.getElementById("background").style.backgroundImage = `url('${heroi.background}')`;
+document.getElementById("tela").style.backgroundImage = `url('${heroi.background}')`;
 document.getElementById("nome_chefe").innerText = boss.nome;
 document.getElementById("titulo_chefe").innerText = boss.titulo;
 document.getElementById("imagem_chefe").src = boss.imagem;
@@ -120,4 +120,13 @@ const atualizarTela = () => {
     document.getElementById("energia-heroi").value = heroi.energia
     document.getElementById("hp-boss").value = boss.hp
     document.getElementById("energia-boss").value = boss.energia
+    if (heroi.hp <= 0) {
+    gameover();
+    }
 };
+
+async function gameover() {
+    const resposta = await fetch('gameover.html');
+    const htmlContent = await resposta.text();
+    document.getElementById("tela").innerHTML = htmlContent
+}
