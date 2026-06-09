@@ -1,5 +1,5 @@
 class Personagem {
-    constructor(nome, titulo, hp, mana, energia, imagem, background){
+    constructor(nome, titulo, hp, mana, energia, imagem, background, win_b, gameover_b){
         this.nome = nome;
         this.titulo = titulo;
         this.hp = hp;
@@ -7,6 +7,8 @@ class Personagem {
         this.energia = energia;
         this.imagem = imagem;
         this.background = background;
+        this.win_b = win_b
+        this.gameover_b = gameover_b
     }
     ataque_heroi(alvo, habilidade){
         if (this.mana >= habilidade.custo && this.energia >= habilidade.energia) {
@@ -62,7 +64,7 @@ let heroi
 let boss
 switch (id_heroi) {
     case 1:
-        heroi = new Personagem ("Mayreel", "A Besta Divina da Colheita", 100, 100, 0, "assets/mayreel_idle.gif", "assets/gt_background.png");
+        heroi = new Personagem ("Mayreel", "A Besta Divina da Colheita", 100, 100, 0, "assets/mayreel_idle.gif", "assets/gt_background.png", "");
         boss = new Personagem ("Lucy", "Besta das Sombras", 100, 0, 50, "assets/shadow_beast.gif", "assets/gt_background.png");
 
         listaHabilidades = [
@@ -82,7 +84,7 @@ switch (id_heroi) {
         ];
         break
     case 18092022:
-        heroi = new Personagem ("FNS", "THE MASTERMIND", 100, 1000, 0, "assets/fns.png", "assets/arena-do-aspas.webp");
+        heroi = new Personagem ("FNS", "THE MASTERMIND", 100, 1000, 0, "assets/fns.png", "assets/arena-do-aspas.webp", "assets/secret_win.jpg", "assets/secret_gameover.webp");
         boss = new Personagem ("Aspas???", "Final Boss", 100, 2024, 50, "assets/aspas.png", "assets/arena-do-aspas.webp");
                 
         listaHabilidades = [
@@ -123,10 +125,21 @@ const atualizarTela = () => {
     if (heroi.hp <= 0) {
     gameover();
     }
+    if (boss.hp <= 0) {
+    win();
+    }
 };
 
 async function gameover() {
     const resposta = await fetch('gameover.html');
     const htmlContent = await resposta.text();
     document.getElementById("tela").innerHTML = htmlContent
+    document.getElementById("gameover_img").src = heroi.gameover_b;
+}
+
+async function win() {
+    const resposta = await fetch('win.html');
+    const htmlContent = await resposta.text();
+    document.getElementById("tela").innerHTML = htmlContent
+    document.getElementById("win_img").src = heroi.win_b;
 }
